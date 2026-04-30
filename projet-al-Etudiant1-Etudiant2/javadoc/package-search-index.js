@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"fr.univrouen.draw.app"},{"l":"fr.univrouen.draw.command"},{"l":"fr.univrouen.draw.model"},{"l":"fr.univrouen.draw.persistence"},{"l":"fr.univrouen.draw.rendering"}];updateSearchResults();

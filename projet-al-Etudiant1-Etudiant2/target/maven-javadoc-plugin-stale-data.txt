@@ -1,0 +1,55 @@
+-J-Duser.language=
+-J-Duser.country=
+@options
+@packages
+-encoding
+'UTF-8'
+-protected
+-source
+'11'
+-sourcepath
+'C:/Users/leiti/projet-Archi-logiciel/projet-al-Etudiant1-Etudiant2/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2026. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/leiti/projet-Archi-logiciel/projet-al-Etudiant1-Etudiant2/target/reports/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'projet-draw 1.0-SNAPSHOT API'
+-linkoffline
+'https://docs.oracle.com/en/java/javase/11/docs/api' 'C:/Users/leiti/projet-Archi-logiciel/projet-al-Etudiant1-Etudiant2/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'projet-draw 1.0-SNAPSHOT API'
+fr.univrouen.draw.app
+fr.univrouen.draw.command
+fr.univrouen.draw.model
+fr.univrouen.draw.persistence
+fr.univrouen.draw.rendering
+C:\Users\leiti\projet-Archi-logiciel\projet-al-Etudiant1-Etudiant2\src\main\java = 1777544296729
+C:\Users\leiti\projet-Archi-logiciel\projet-al-Etudiant1-Etudiant2\target\reports\apidocs\allclasses-index.html = 1777544330048
+C:\Users\leiti\projet-Archi-logiciel\projet-al-Etudiant1-Etudiant2\target\reports\apidocs\allpackages-index.html = 1777544330054
+C:\Users\leiti\projet-Archi-logiciel\projet-al-Etudiant1-Etudiant2\target\reports\apidocs\copy.svg = 1777544330219
+C:\Users\leiti\projet-Archi-logiciel\projet-al-Etudiant1-Etudiant2\target\reports\apidocs\element-list = 1777544329450
+C:\Users\leiti\projet-Archi-logiciel\projet-al-Etudiant1-Etudiant2\target\reports\apidocs\help-doc.html = 1777544330193
+C:\Users\leiti\projet-Archi-logiciel\projet-al-Etudiant1-Etudiant2\target\reports\apidocs\index-all.html = 1777544330131
+C:\Users\leiti\projet-Archi-logiciel\projet-al-Etudiant1-Etudiant2\target\reports\apidocs\index.html = 1777544329978
+C:\Users\leiti\projet-Archi-logiciel\projet-al-Etudiant1-Etudiant2\target\reports\apidocs\link.svg = 1777544330222
+C:\Users\leiti\projet-Archi-logiciel\projet-al-Etudiant1-Etudiant2\target\reports\apidocs\member-search-index.js = 1777544330091
+C:\Users\leiti\projet-Archi-logiciel\projet-al-Etudiant1-Etudiant2\target\reports\apidocs\module-search-index.js = 1777544330059
+C:\Users\leiti\projet-Archi-logiciel\projet-al-Etudiant1-Etudiant2\target\reports\apidocs\overview-summary.html = 1777544330136
+C:\Users\leiti\projet-Archi-logiciel\projet-al-Etudiant1-Etudiant2\target\reports\apidocs\overview-tree.html = 1777544329970
+C:\Users\leiti\projet-Archi-logiciel\projet-al-Etudiant1-Etudiant2\target\reports\apidocs\package-search-index.js = 1777544330068
+C:\Users\leiti\projet-Archi-logiciel\projet-al-Etudiant1-Etudiant2\target\reports\apidocs\script.js = 1777544330217
+C:\Users\leiti\projet-Archi-logiciel\projet-al-Etudiant1-Etudiant2\target\reports\apidocs\search-page.js = 1777544330248
+C:\Users\leiti\projet-Archi-logiciel\projet-al-Etudiant1-Etudiant2\target\reports\apidocs\search.html = 1777544330134
+C:\Users\leiti\projet-Archi-logiciel\projet-al-Etudiant1-Etudiant2\target\reports\apidocs\search.js = 1777544330237
+C:\Users\leiti\projet-Archi-logiciel\projet-al-Etudiant1-Etudiant2\target\reports\apidocs\serialized-form.html = 1777544329631
+C:\Users\leiti\projet-Archi-logiciel\projet-al-Etudiant1-Etudiant2\target\reports\apidocs\stylesheet.css = 1777544330201
+C:\Users\leiti\projet-Archi-logiciel\projet-al-Etudiant1-Etudiant2\target\reports\apidocs\tag-search-index.js = 1777544330093
+C:\Users\leiti\projet-Archi-logiciel\projet-al-Etudiant1-Etudiant2\target\reports\apidocs\type-search-index.js = 1777544330087
