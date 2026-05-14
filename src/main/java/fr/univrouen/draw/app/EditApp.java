@@ -1,6 +1,6 @@
 package fr.univrouen.draw.app;
 
-import fr.univrouen.draw.command.CommandInterpreter;
+import fr.univrouen.draw.facade.DrawingFacade;
 import fr.univrouen.draw.rendering.Canvas;
 
 import javax.swing.JFrame;
@@ -16,7 +16,7 @@ public class EditApp {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
 
-        CommandInterpreter interpreter = new CommandInterpreter(canvas);
+        DrawingFacade facade = new DrawingFacade(canvas);
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         System.out.println("Vector Drawing Editor started.");
@@ -25,7 +25,7 @@ public class EditApp {
                 System.out.print("> ");
                 String line = reader.readLine();
                 if (line == null) break;
-                if (!interpreter.execute(line)) {
+                if (!facade.execute(line)) {
                     break;
                 }
             }

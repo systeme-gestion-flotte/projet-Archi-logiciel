@@ -39,13 +39,13 @@ Nous avions besoin d'effectuer plusieurs opérations différentes sur l'arbre de
 - Nous aurions violé le principe **OCP** (Open/Closed Principle) : l'ajout d'un nouveau format d'export aurait nécessité de modifier toutes les classes de formes.
 Le patron **Visiteur** résout cela en extrayant ces opérations dans des classes séparées (`XMLSerializerVisitor`, `GraphicsRendererVisitor`). Pour ajouter un nouveau traitement, il suffit de créer un nouveau visiteur sans toucher aux classes du modèle.
 
-### 3. Le Patron Commande (Comportement)
+### 3. Le Patron Façade (Structure)
 **Pourquoi l'avoir utilisé ?**
-L'éditeur de dessin est géré via un interpréteur de commandes en ligne (`new`, `line`, `grp`, `save`...). Le patron **Commande** (ici simplifié via `CommandInterpreter`) permet de séparer la lecture des entrées utilisateur de la logique d'exécution des modifications sur le modèle.
+L'éditeur de dessin est géré via une interface simplifiée : `DrawingFacade`. Le patron **Façade** permet de masquer la complexité du sous-système de dessin (création de formes, gestion du canevas, persistance) derrière une interface unique et facile à utiliser. Le code client (`EditApp`) n'a qu'à appeler la méthode `execute()` de la façade sans se soucier de la logique interne de chaque commande.
 
 ### Respect des Principes S.O.L.I.D.
 - **SRP** : Séparation stricte entre le Modèle (`fr.univrouen.draw.model`), le Rendu (`fr.univrouen.draw.rendering`), et la Persistance (`fr.univrouen.draw.persistence`).
 - **OCP** : L'utilisation du patron Visiteur rend le modèle fermé à la modification mais ouvert à l'extension (on peut ajouter de nouveaux visiteurs). L'interface `Shape` permet d'ajouter de nouvelles formes sans modifier les collections qui les stockent.
 - **LSP** : Toutes les formes (`Line`, `Group`, etc.) respectent parfaitement le contrat de l'interface `Shape`.
 - **ISP** : Les interfaces sont petites et ciblées (`Shape`, `ShapeVisitor`).
-- **DIP** : Le code de haut niveau (`Drawing`, `CommandInterpreter`) dépend de l'abstraction `Shape` et non des implémentations concrètes.
+- **DIP** : Le code de haut niveau (`Drawing`, `DrawingFacade`) dépend de l'abstraction `Shape` et non des implémentations concrètes.

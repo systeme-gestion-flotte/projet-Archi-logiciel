@@ -1,4 +1,4 @@
-package fr.univrouen.draw.command;
+package fr.univrouen.draw.facade;
 
 import fr.univrouen.draw.model.*;
 import fr.univrouen.draw.rendering.Canvas;
@@ -11,15 +11,24 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class CommandInterpreter {
+/**
+ * Facade pour le système de dessin.
+ * Fournit une interface simplifiée pour manipuler le dessin via des commandes textuelles.
+ */
+public class DrawingFacade {
     private Canvas canvas;
     private Drawing drawing;
 
-    public CommandInterpreter(Canvas canvas) {
+    public DrawingFacade(Canvas canvas) {
         this.canvas = canvas;
         this.drawing = canvas.getDrawing();
     }
 
+    /**
+     * Exécute une commande textuelle.
+     * @param commandLine La ligne de commande à exécuter.
+     * @return true si l'application doit continuer, false s'il faut quitter.
+     */
     public boolean execute(String commandLine) {
         String[] parts = commandLine.trim().split("\\s+");
         if (parts.length == 0 || parts[0].isEmpty()) return true;
