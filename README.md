@@ -21,7 +21,7 @@ mvn clean compile
   ```
 - **Pour convertir en image (`v2bmp`) :**
   ```bash
-  mvn exec:java -Dexec.mainClass="fr.univrouen.draw.app.V2BmpApp" -Dexec.args="in.vec out.png"
+  mvn exec:java -Dexec.mainClass="fr.univrouen.draw.app.V2BmpApp" -Dexec.args="out.vec out.png"
   ```
 
 ## Principes S.O.L.I.D. et Patrons de Conception

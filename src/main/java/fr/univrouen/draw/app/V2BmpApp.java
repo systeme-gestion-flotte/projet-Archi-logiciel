@@ -27,7 +27,7 @@ public class V2BmpApp {
             Graphics2D g2d = image.createGraphics();
 
             g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-            g2d.setColor(Color.WHITE);
+            g2d.setColor(java.awt.Color.LIGHT_GRAY);
             g2d.fillRect(0, 0, width, height);
 
             GraphicsRendererVisitor renderer = new GraphicsRendererVisitor(g2d);

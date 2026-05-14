@@ -30,6 +30,7 @@ public class GraphicsRendererVisitor implements ShapeVisitor {
     @Override
     public void visit(Line line) {
         g2d.setColor(getAwtColor(line.getColor()));
+        g2d.setStroke(new java.awt.BasicStroke(3.0f));
         g2d.draw(new Line2D.Double(line.getX1(), line.getY1(), line.getX2(), line.getY2()));
     }
 
@@ -40,7 +41,7 @@ public class GraphicsRendererVisitor implements ShapeVisitor {
         double height = Math.abs(rectangle.getY2() - rectangle.getY1());
         double x = Math.min(rectangle.getX1(), rectangle.getX2());
         double y = Math.min(rectangle.getY1(), rectangle.getY2());
-        g2d.draw(new Rectangle2D.Double(x, y, width, height));
+        g2d.fill(new Rectangle2D.Double(x, y, width, height));
     }
 
     @Override
@@ -48,7 +49,7 @@ public class GraphicsRendererVisitor implements ShapeVisitor {
         g2d.setColor(getAwtColor(circle.getColor()));
         double x = circle.getCx() - circle.getR();
         double y = circle.getCy() - circle.getR();
-        g2d.draw(new Ellipse2D.Double(x, y, circle.getR() * 2, circle.getR() * 2));
+        g2d.fill(new Ellipse2D.Double(x, y, circle.getR() * 2, circle.getR() * 2));
     }
 
     @Override
@@ -56,7 +57,7 @@ public class GraphicsRendererVisitor implements ShapeVisitor {
         g2d.setColor(getAwtColor(ellipse.getColor()));
         double x = ellipse.getCx() - ellipse.getRx();
         double y = ellipse.getCy() - ellipse.getRy();
-        g2d.draw(new Ellipse2D.Double(x, y, ellipse.getRx() * 2, ellipse.getRy() * 2));
+        g2d.fill(new Ellipse2D.Double(x, y, ellipse.getRx() * 2, ellipse.getRy() * 2));
     }
 
     @Override

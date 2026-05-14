@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE drawing SYSTEM "draw.dtd">
 <drawing>
-<circle cx="100.00" cy="100.00" r="50.00" color="red" />
-<rectangle x1="200.00" y1="50.00" x2="350.00" y2="150.00" color="blue" />
 <line x1="50.00" y1="200.00" x2="400.00" y2="200.00" color="green" />
 <ellipse cx="250.00" cy="300.00" rx="100.00" ry="50.00" color="yellow" />
 </drawing>
