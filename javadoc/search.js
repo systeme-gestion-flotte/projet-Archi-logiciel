@@ -1,27 +1,4 @@
-/*
- * Copyright (c) 2015, 2023, Oracle and/or its affiliates. All rights reserved.
- * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
- *
- * This code is free software; you can redistribute it and/or modify it
- * under the terms of the GNU General Public License version 2 only, as
- * published by the Free Software Foundation.  Oracle designates this
- * particular file as subject to the "Classpath" exception as provided
- * by Oracle in the LICENSE file that accompanied this code.
- *
- * This code is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
- * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
- * version 2 for more details (a copy is included in the LICENSE file that
- * accompanied this code).
- *
- * You should have received a copy of the GNU General Public License version
- * 2 along with this work; if not, write to the Free Software Foundation,
- * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
- *
- * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
- * or visit www.oracle.com if you need additional information or have any
- * questions.
- */
+
 "use strict";
 const messages = {
     enterTerm: "Enter a search term",
@@ -122,7 +99,7 @@ function getURL(item, category) {
 }
 function createMatcher(term, camelCase) {
     if (camelCase && !isUpperCase(term)) {
-        return null;  // no need for camel-case matcher for lower case query
+        return null;  
     }
     var pattern = "";
     var upperCase = [];
@@ -130,13 +107,13 @@ function createMatcher(term, camelCase) {
         var tokens = w.split(/(?=[A-Z,.()<>?[\/])/);
         for (var i = 0; i < tokens.length; i++) {
             var s = tokens[i];
-            // ',' and '?' are the only delimiters commonly followed by space in java signatures
+            
             pattern += "(" + $.ui.autocomplete.escapeRegex(s).replace(/[,?]/g, "$&\\s*?") + ")";
             upperCase.push(false);
             var isWordToken =  /\w$/.test(s);
             if (isWordToken) {
                 if (i === tokens.length - 1 && index < array.length - 1) {
-                    // space in query string matches all delimiters
+                    
                     pattern += "(.*?)";
                     upperCase.push(isUpperCase(s[0]));
                 } else {
@@ -161,7 +138,7 @@ function findMatch(matcher, input, startOfName, endOfName) {
     var from = startOfName;
     matcher.lastIndex = from;
     var match = matcher.exec(input);
-    // Expand search area until we get a valid result or reach the beginning of the string
+    
     while (!match || match.index + match[0].length < startOfName || endOfName < match.index) {
         if (from === 0) {
             return NO_MATCH;
@@ -178,9 +155,9 @@ function findMatch(matcher, input, startOfName, endOfName) {
     for (var i = 1; i < match.length; i += 2) {
         var isUpper = isUpperCase(input[start]);
         var isMatcherUpper = matcher.upperCase[i];
-        // capturing groups come in pairs, match and non-match
+        
         boundaries.push(start, start + match[i].length);
-        // make sure groups are anchored on a left word boundary
+        
         var prevChar = input[start - 1] || "";
         var nextChar = input[start + 1] || "";
         if (start !== 0 && !/[\W_]/.test(prevChar) && !/[\W_]/.test(input[start])) {
@@ -195,12 +172,12 @@ function findMatch(matcher, input, startOfName, endOfName) {
         prevEnd = start + match[i].length;
         start += match[i].length + match[i + 1].length;
 
-        // lower score for parts of the name that are missing
+        
         if (match[i + 1] && prevEnd < endOfName) {
             score -= rateNoise(match[i + 1]);
         }
     }
-    // lower score if a type name contains unmatched camel-case parts
+    
     if (input[matchEnd - 1] !== "." && endOfName > matchEnd)
         score -= rateNoise(input.slice(matchEnd, endOfName));
     score -= rateNoise(input.slice(0, Math.max(startOfName, match.index)));
@@ -315,12 +292,12 @@ function doSearch(request, response) {
     }
     response(result);
 }
-// JQuery search menu implementation
+
 $.widget("custom.catcomplete", $.ui.autocomplete, {
     _create: function() {
         this._super();
         this.widget().menu("option", "items", "> .result-item");
-        // workaround for search result scrolling
+        
         this.menu._scrollIntoView = function _scrollIntoView( item ) {
             var borderTop, paddingTop, offset, scroll, elementHeight, itemHeight;
             if ( this._hasScroll() ) {
@@ -408,7 +385,7 @@ $(function() {
     $("input#search-input").focus(collapse);
     $("main").click(collapse);
     $("section[id] > :header, :header[id], :header:has(a[id])").each(function(idx, el) {
-        // Create anchor links for headers with an associated id attribute
+        
         var hdr = $(el);
         var id = hdr.attr("id") || hdr.parent("section").attr("id") || hdr.children("a").attr("id");
         if (id) {

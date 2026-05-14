@@ -13,6 +13,6 @@ fr\univrouen\draw\rendering\GraphicsRendererVisitor$1.class
 fr\univrouen\draw\rendering\Canvas.class
 fr\univrouen\draw\model\Rectangle.class
 fr\univrouen\draw\persistence\XMLSerializerVisitor.class
-fr\univrouen\draw\command\CommandInterpreter.class
+fr\univrouen\draw\facade\DrawingFacade.class
 fr\univrouen\draw\rendering\GraphicsRendererVisitor.class
 fr\univrouen\draw\app\V2BmpApp.class
